@@ -88,6 +88,9 @@ li, a, button {
 .navLinks, .iconLinks {
     list-style: none;
     text-decoration: none;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 .navLinks li, .iconLinks li {
@@ -102,6 +105,7 @@ li, a, button {
     display: inline-block;
     text-decoration: none;
     color: #DA0037;
+
 }
 
 /* Landing Layout Settings */
@@ -129,7 +133,7 @@ li, a, button {
 
 
 .sloganContainer {
-    cursor: pointer;
+    cursor: default;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -147,6 +151,9 @@ li, a, button {
     transition: 0.5s ;
     padding: 0 0 0 30px;
     width: 100%;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 .sloganContainer h1:hover {
@@ -191,6 +198,9 @@ li, a, button {
     margin-right: 30%;
     align-self: flex-end;
     font-size: large;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 .landing-btn:hover {
@@ -204,16 +214,55 @@ li, a, button {
 .content-container {
     grid-area: page-content;
     background-color: #171717;
+    display: grid;
+    grid-template-rows: 1000px 1000px;
+    grid-template-areas:
+            "events"
+            "row2";
 }
 
 /* Event Layout Settings */
-/*.events {
+.events {
+    grid-area: events;
     display: grid;
-    grid-template-columns: 1fr 512px 512px 1fr;
-    grid-template-rows: 1fr 1fr;
-    background-color: gray;
+    grid-template-columns: minmax(512px, 100%) minmax(512px, 100%);
+    grid-template-areas: "save eventContainer";
+    background-color: #171717;
     height: 100%;
-}*/
+}
+
+.saveTheDateContainer {
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    height: 100%;
+    width: 100%;
+    grid-area: save;
+    background-color: #171717;
+}
+
+.saveTheDateContainer h1{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 370px;
+    color: #DA0037;
+    line-height: 0.8;
+    align-self: end;
+    text-align: right;
+    transition: 0.5s ;
+    padding: 40px 0 0 0;
+    min-width: 512px;
+    max-width: 720px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.eventContainer {
+    grid-area: eventContainer;
+    background-color: rgba(233, 232, 232, 100%);
+}
 
 /* Footer Layout Settings */
 .footer {
