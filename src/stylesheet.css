@@ -14,7 +14,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     background-color: black;
 }
 
@@ -24,9 +24,9 @@ li, a, button {
     font-style: normal;
     text-decoration: none;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 16px;
     color: #E9E8E8;
-    transition: all 0.3s ease 0s;
+    transition: 0.5s;
 }
 
 
@@ -54,6 +54,7 @@ li, a, button {
     background-color: #171717;
     position: fixed;
     align-items: center;
+    z-index: 5;
 }
 
 /* Navigation Settings */
@@ -63,18 +64,19 @@ li, a, button {
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 14px 3px;
-    z-index: 4;
+    padding: 14px 15px;
     align-self: center;
     justify-self: center;
     background-color: #171717;
 }
-
+#logo-76 {
+    padding: 0 15px;
+}
 .navigation svg {
     cursor: pointer;
     height: 25px;
     color: #EDEDED;
-    transition: all 0.3s ease 0s;
+    transition: 0.5s;
 }
 
 .navigation svg:hover {
@@ -90,10 +92,10 @@ li, a, button {
 
 .navLinks li, .iconLinks li {
     display: inline-block;
-    padding: 0 15px;
+    padding: 0 10px;
     text-decoration: none;
     color: #EDEDED;
-    transition: all 0.3s ease 0s;
+    transition: 0.5s;
 }
 
 .navLinks li a:hover, .iconLinks li a:hover {
@@ -106,37 +108,100 @@ li, a, button {
 .landing {
     grid-area: page-landing;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(512px, 720px) minmax(512px, 720px);
+    justify-content: center;
     grid-template-areas:
         "logo ready";
-    background-color: darkgray;
+    z-index: 1;
 }
 
+#backgroundVideo {
+    grid-area: page-landing;
+    opacity: 75%;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    background-color: #171717;
+}
+
+
+
 .sloganContainer {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
     height: 100%;
+    z-index: 0;
 }
 
 .sloganContainer h1 {
-    padding: 0;
     font-family: 'Bebas Neue', cursive;
-    font-size: 510px;
-    color: #E9E8E8;
+    font-size: 210px;
+    color: rgba(233, 232, 232, 95%);
     line-height: 0.8;
-    text-align: end;
+    text-align: left;
+    transition: 0.5s ;
+    padding: 0 0 0 30px;
+    width: 100%;
 }
+
+.sloganContainer h1:hover {
+    color: rgba(233, 232, 232, 15%);
+}
+
 
 .logoContainer {
     grid-area: logo;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* aligns content to the right */
+    align-items: center;
+    height: 100%;
+    z-index: 0;
+    width: 100%;
+    justify-self: right;
+}
+
+.logoContainer svg {
+    color: rgba(233, 232, 232, 95%);
+    align-self: flex-end;
+    padding-right: 30px;
+    margin-bottom: 20px;
+    width: 400px;
+    transition: 0.5s;
+    margin-left: 80px;
+}
+
+.logoContainer svg:hover {
+    color: rgba(233, 232, 232, 15%);
+}
+
+.landing-btn {
+    cursor: pointer;
+    border: 4px solid rgba(233, 232, 232, 95%);
+    color: rgba(233, 232, 232, 95%);
+    border-radius: 10px;
+    padding: 10px 20px;
+    background: none;
+    margin-right: 150px;
+    align-self: flex-end;
+}
+
+.landing-btn:hover {
+    background: rgba(233, 232, 232, 25%);
+    font-size: large;
+
 }
 
 
 /* Content Layout Settings */
 .content-container {
     grid-area: page-content;
+    background-color: #171717;
 }
 
 /* Event Layout Settings */
