@@ -2,4 +2,4 @@
 Hompage for TunnelVision Events
 
 ## Preview:
-https://htmlpreview.github.io/?https://github.com/kevinandrerenner/TunnelVisionEventsPage/blob/main/src/index.htm.html
+https://htmlpreview.github.io/?https://github.com/kevinandrerenner/TunnelVisionEventsPage/blob/main/src/index.html
